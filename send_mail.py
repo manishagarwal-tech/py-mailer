@@ -1,3 +1,4 @@
+import os
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
@@ -21,5 +22,14 @@ def send_email(subject, body, to_email, from_email, smtp_server, smtp_port, smtp
     except Exception as e:
         print(f"Failed to send email. Error: {str(e)}")
 
-# Example usage:
-# send_email("Test Email", "This is a test email.", "recipient@example.com", "sender@example.com", "smtp.example.com", 587, "username", "password")
+if __name__ == "__main__":
+    # Get environment variables
+    to_email = os.environ.get('TO_EMAIL')
+    from_email = os.environ.get('FROM_EMAIL')
+    smtp_server = os.environ.get('SMTP_SERVER')
+    smtp_port = int(os.environ.get('SMTP_PORT'))
+    smtp_username = os.environ.get('SMTP_USERNAME')
+    smtp_password = os.environ.get('SMTP_PASSWORD')
+    
+    # Example usage:
+    send_email("Test Email", "This is a test email.", to_email, from_email, smtp_server, smtp_port, smtp_username, smtp_password)
