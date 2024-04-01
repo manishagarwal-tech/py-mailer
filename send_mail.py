@@ -31,4 +31,4 @@ if __name__ == "__main__":
     smtp_password = os.environ.get('SMTP_PASSWORD')
     
     # Example usage:
-    send_email("Test Email", "This is a test email.", to_email, from_email, smtp_server, smtp_port, smtp_username, smtp_password)
+    send_email("Test Email", "This is a test email using python script.", to_email, from_email, smtp_server, smtp_port, smtp_username, smtp_password)
