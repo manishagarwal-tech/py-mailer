@@ -25,4 +25,4 @@ jobs:
         SMTP_PORT: ${{ secrets.SMTP_PORT }}
         SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
         SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
-      run: python send_email.py
+      run: python send_mail.py
